@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d4ignv6jyngw1"]
+
+[ext_resource type="Script" uid="uid://cik1hx31sur7l" path="res://GameObjects/3DLabel/sub_viewport.gd" id="1_ft4me"]
+
+[node name="CustomLabelObj" type="Sprite3D" unique_id=462409172]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1658184626]
+script = ExtResource("1_ft4me")
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=1656979341]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hatdog Text 123"

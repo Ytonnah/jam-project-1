@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b61258u6rdcx0"]
+
+[ext_resource type="Script" uid="uid://bjxapmjxh7sqq" path="res://GameObjects/GameCharacter/movement.gd" id="1_q1bci"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gj0gs"]
+radius = 0.6098633
+height = 2.1152344
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q1bci"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_q1bci"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="GameCharacter" type="CharacterBody3D" unique_id=1987827767 groups=["Player"]]
+script = ExtResource("1_q1bci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855276095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007597029, 0.057617188, 0)
+shape = SubResource("CapsuleShape3D_gj0gs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=960365236]
+mesh = SubResource("CapsuleMesh_q1bci")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1350287832]
+visible = false
+texture = SubResource("ViewportTexture_q1bci")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=620174417]
+disable_3d = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=559369210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6034922)
+
+[node name="DEBUG" type="Control" parent="Camera3D" unique_id=119457314]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Camera3D/DEBUG" unique_id=190746818]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 37.0
+offset_right = 131.0
+offset_bottom = 60.0
+text = "Status: Healty"
+
+[node name="Action" type="Label" parent="Camera3D/DEBUG" unique_id=2016142666]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 49.0
+text = "Action
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionFeedback" type="RichTextLabel" parent="Camera3D/DEBUG" unique_id=873776119]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 516.0
+offset_right = 777.0
+offset_bottom = 574.0
+text = "You Interacted with something "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainUI" type="Control" parent="Camera3D" unique_id=890651876]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4

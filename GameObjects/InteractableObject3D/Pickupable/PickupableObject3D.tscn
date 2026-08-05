@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://5asiudwwopif"]
+
+[ext_resource type="Script" uid="uid://clrpfkxnicwn5" path="res://GameObjects/InteractableObject3D/Pickupable/pickupable_object_3d.gd" id="1_460gw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_yd65q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jwkd2"]
+radius = 1.0050294
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yd65q"]
+
+[node name="PickupableObject3D" type="RigidBody3D" unique_id=225234001]
+script = ExtResource("1_460gw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=691005296]
+mesh = SubResource("SphereMesh_yd65q")
+
+[node name="PickupArea" type="Area3D" parent="." unique_id=699331027]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea" unique_id=790999813]
+shape = SubResource("SphereShape3D_jwkd2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1862581483]
+shape = SubResource("SphereShape3D_yd65q")
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="PickupArea" to="." method="_on_pickup_area_body_exited"]
