@@ -1,0 +1,53 @@
+[gd_scene format=4 uid="uid://behjev48ooy4d"]
+
+[ext_resource type="Texture2D" uid="uid://buqenx3likn1c" path="res://Assets/pngsss/game_truck.png" id="1_eouyf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sy6d"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_eouyf")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y4k1n"]
+_surfaces = [{
+"aabb": AABB(-3.2851791, -4.4378414, -11.798919, 6.5703583, 8.875683, 23.597837),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d8lop"]
+resource_name = "game_Cube_004"
+_surfaces = [{
+"aabb": AABB(-3.2851791, -4.4378414, -11.798919, 6.5703583, 8.875683, 23.597837),
+"attribute_data": PackedByteArray("uN+l//9//3+43/9//3+l/2CCTIDLptr/YILa/8umTIDo3///doDzf+jf8392gP////+I8JHj4oT//+KEkeOI8P9//3/C3/f9/3/3/cLf/382gCOAJODu/zaA7v8k4COA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_1sy6d"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(1.9273676, 1.6365241, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///78AAP//AAD/vwAA//////+/AAAAAAAA/78AAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAP+//////////7//////AAD/v///AAD///+///8AAP//AIAAAP////8AgP///////wCAAAAAAP//AIAAAAAAAABU1f//AAD//1TV//8AAAAAVNUAAAAA//9U1f////8AAFTVAAD/////VNUAAP//AABU1f///////1TV/3////9/////f////3///////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3///6oqVNWqKlTVqipU1aoqVNWqqqqqqqqqqqqqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_y4k1n")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b1yak"]
+data = PackedVector3Array(-3.2851791, -4.4378414, 11.798919, -3.2851791, 4.4378414, -11.798919, -3.2851791, 4.4378414, 11.798919, -3.2851791, -4.4378414, 11.798919, -3.2851791, -4.4378414, -11.798919, -3.2851791, 4.4378414, -11.798919, -3.2851791, -4.4378414, -11.798919, 3.2851791, 4.4378414, -11.798919, -3.2851791, 4.4378414, -11.798919, -3.2851791, -4.4378414, -11.798919, 3.2851791, -4.4378414, -11.798919, 3.2851791, 4.4378414, -11.798919, 3.2851791, -4.4378414, -11.798919, 3.2851791, 4.4378414, 11.798919, 3.2851791, 4.4378414, -11.798919, 3.2851791, -4.4378414, -11.798919, 3.2851791, -4.4378414, 11.798919, 3.2851791, 4.4378414, 11.798919, 3.2851791, -4.4378414, 11.798919, -3.2851791, 4.4378414, 11.798919, 3.2851791, 4.4378414, 11.798919, 3.2851791, -4.4378414, 11.798919, -3.2851791, -4.4378414, 11.798919, -3.2851791, 4.4378414, 11.798919, -3.2851791, -4.4378414, -11.798919, 3.2851791, -4.4378414, 11.798919, 3.2851791, -4.4378414, -11.798919, -3.2851791, -4.4378414, -11.798919, -3.2851791, -4.4378414, 11.798919, 3.2851791, -4.4378414, 11.798919, 3.2851791, 4.4378414, -11.798919, -3.2851791, 4.4378414, 11.798919, -3.2851791, 4.4378414, -11.798919, 3.2851791, 4.4378414, -11.798919, 3.2851791, 4.4378414, 11.798919, -3.2851791, 4.4378414, 11.798919)
+
+[node name="ship_bin2" type="MeshInstance3D" unique_id=1132514401]
+mesh = SubResource("ArrayMesh_d8lop")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=401319098]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=50840794]
+shape = SubResource("ConcavePolygonShape3D_b1yak")

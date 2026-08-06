@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://paa7be24vcwv" path="res://Scenes/world/sub_viewport.gd" id="1_4717r"]
 [ext_resource type="PackedScene" uid="uid://b61258u6rdcx0" path="res://GameObjects/GameCharacter/GameCharacter.tscn" id="2_myojr"]
 [ext_resource type="PackedScene" uid="uid://5asiudwwopif" path="res://GameObjects/InteractableObject3D/Pickupable/PickupableObject3D.tscn" id="3_g0k8s"]
+[ext_resource type="PackedScene" uid="uid://7mna34ojbxtu" path="res://Assets/tall_grass.tscn" id="4_12diy"]
+[ext_resource type="PackedScene" uid="uid://behjev48ooy4d" path="res://Assets/ship_bin.tscn" id="4_qgrml"]
+[ext_resource type="PackedScene" uid="uid://bsdqbg315415v" path="res://Assets/tree.tscn" id="5_nhnx1"]
+[ext_resource type="PackedScene" uid="uid://bob3qixwrftvr" path="res://Assets/grass.tscn" id="6_5jrsn"]
+[ext_resource type="PackedScene" uid="uid://dagiumsh48wmf" path="res://Assets/gas_stand.tscn" id="7_pbr1s"]
+[ext_resource type="PackedScene" uid="uid://dsli8pquusg3p" path="res://Assets/crate.tscn" id="8_tspqu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tcf2h"]
 viewport_path = NodePath("Interactable Object/text above/SubViewport")
@@ -57,7 +63,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_6xmxd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2085843945]
-transform = Transform3D(9.955137, 0, -2.6077032e-08, 0, 0.1844579, 0, 4.0978193e-08, 0, 9.488926, -0.088378645, 0.31003714, -0.026207924)
+transform = Transform3D(51.491768, 0, -1.1920929e-07, 0, 0.1844579, 0, 2.0861626e-07, 0, 37.860195, -0.08837866, 0.31003714, -0.026207924)
 mesh = SubResource("PlaneMesh_tcf2h")
 
 [node name="GameCharacter" parent="." unique_id=1987827767 instance=ExtResource("2_myojr")]
@@ -65,3 +71,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9226618, 2.5352333, 2.6792
 
 [node name="PickupableObject3D" parent="." unique_id=225234001 instance=ExtResource("3_g0k8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1707754, 1.3808419, -9.400598)
+
+[node name="tall_grass2" parent="." unique_id=1432784710 instance=ExtResource("4_12diy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.69349, 3.2867737, -10.790535)
+
+[node name="ship_bin2" parent="." unique_id=1132514401 instance=ExtResource("4_qgrml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.785671, 4.7246113, -15.722063)
+
+[node name="grass2" parent="." unique_id=1706029183 instance=ExtResource("6_5jrsn")]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 22.732979, 1.48677, -22.998486)
+
+[node name="gas_stand2" parent="." unique_id=322410124 instance=ExtResource("7_pbr1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.080551, 2.3138194, -16.496925)
+
+[node name="crate2" parent="." unique_id=1910325104 instance=ExtResource("8_tspqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.077883, 1.2867699, -21.89316)
+
+[node name="tree2" parent="." unique_id=599960925 instance=ExtResource("5_nhnx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4974556, 10.208464, -26.697556)

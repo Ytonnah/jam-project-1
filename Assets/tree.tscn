@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://bsdqbg315415v"]
+
+[ext_resource type="Texture2D" uid="uid://bk1gotta4xfqf" path="res://Assets/pngsss/game_3tree.png" id="1_4mnl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pihme"]
+resource_name = "tree"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_4mnl2")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o8sot"]
+_surfaces = [{
+"aabb": AABB(-5.9139867, -8.5, -6.1139865, 12.027973, 17.000002, 12.027973),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "tree",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAEGEAAD///7/QYQAAP//AABBhAAAAAD+/0GEAAC9ewAA//8AAL17//8AAAAAvXsAAAAAAAC9e/////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m520v"]
+resource_name = "game_Plane"
+_surfaces = [{
+"aabb": AABB(-5.9139867, -8.5, -6.1139865, 12.027973, 17.000002, 12.027973),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_pihme"),
+"name": "tree",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAEGEAID///7/QYQAgP//AABBhACAAAD+/0GEAIC9ewAA////v717//8AAP+/vXsAAAAA/7+9e///////v/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_o8sot")
+
+[node name="tree2" type="MeshInstance3D" unique_id=599960925]
+mesh = SubResource("ArrayMesh_m520v")

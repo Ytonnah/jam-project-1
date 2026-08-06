@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://7mna34ojbxtu"]
+
+[ext_resource type="Texture2D" uid="uid://dduenkl1su3vf" path="res://Assets/pngsss/game_tall.png" id="1_4rxc2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rilbi"]
+resource_name = "tall_grass"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_4rxc2")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1v0v0"]
+_surfaces = [{
+"aabb": AABB(-3, -3, -3, 6, 6, 6),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "tall_grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP9/AAD//////38AAP//AAD/fwAAAAD///9/AAD/fwAA//8AAP9///8AAAAA/38AAAAAAAD/f/////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3hyof"]
+resource_name = "game_Plane_007"
+_surfaces = [{
+"aabb": AABB(-3, -3, -3, 6, 6, 6),
+"attribute_data": PackedByteArray("AAB/9P//fwb//3/0AAB/BgAAf/T//38G//9/9AAAfwY="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_rilbi"),
+"name": "tall_grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP9/AID//////38AgP//AAD/fwCAAAD///9/AID/fwAA////v/9///8AAP+//38AAAAA/7//f///////v/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1v0v0")
+
+[node name="tall_grass2" type="MeshInstance3D" unique_id=1432784710]
+mesh = SubResource("ArrayMesh_3hyof")
