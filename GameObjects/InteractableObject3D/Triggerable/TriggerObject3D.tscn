@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3nqk6bv7ojye"]
+
+[ext_resource type="Script" uid="uid://bunkfp1c8cnjq" path="res://GameObjects/InteractableObject3D/Triggerable/trigger_object_3d.gd" id="1_rfpwa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xr3q8"]
+
+[node name="TriggerObject3d" type="Area3D" unique_id=528592799]
+script = ExtResource("1_rfpwa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1575508173]
+shape = SubResource("BoxShape3D_xr3q8")
+
+[node name="Custom_Feedback" type="Node" parent="." unique_id=1170124797]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

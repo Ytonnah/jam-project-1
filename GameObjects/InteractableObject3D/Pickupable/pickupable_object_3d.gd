@@ -2,6 +2,10 @@ extends RigidBody3D
 
 var interactable = false
 
+func show_interactable_prompt():
+	var player = get_tree().get_first_node_in_group("Player")
+	player.interact_feedback1("[E] interact")
+	
 
 
 signal pickup_obj
@@ -33,6 +37,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if interactable  and Input.is_action_just_pressed("Interact"):
+		var player = get_tree().get_first_node_in_group("Player")
+		player.interact_feedback1('Picked up ' + str(name))
 		pickup()
 	pass
 
@@ -41,6 +47,7 @@ func _on_pickup_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		print_debug('player entered')
 		interactable = true
+		show_interactable_prompt()
 
 
 

@@ -42,6 +42,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+#DEBUG
+func interact_feedback1(text = "bug"):
+	$Camera3D/DEBUG/InteractionFeedback.animate_fade_in(text)
+
 func _physics_process(delta: float) -> void:
 	# Add gravity
 	if not is_on_floor():
@@ -49,11 +53,15 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity
+		#velocity.y = jump_velocity
+		pass
 	#Handle running
-	if Input.is_action_pressed("Run") and is_on_floor():
-		speed = 20.0
+	if Input.is_action_pressed("Run") and is_on_floor() and velocity != Vector3.ZERO:
+		speed = 8.0
+		$Camera3D.apply_running_bob(delta,true)
 	else:
+		$Camera3D.apply_running_bob(delta,false)
+		
 		speed = 5.0
 
 	# Get movement direction based on player rotation

@@ -9,7 +9,7 @@ radius = 1.0050294
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yd65q"]
 
-[node name="PickupableObject3D" type="RigidBody3D" unique_id=225234001]
+[node name="PickupableObject3D" type="RigidBody3D" unique_id=225234001 groups=["Interactable"]]
 script = ExtResource("1_460gw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=691005296]

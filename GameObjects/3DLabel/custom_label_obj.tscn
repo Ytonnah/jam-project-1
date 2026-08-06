@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cik1hx31sur7l" path="res://GameObjects/3DLabel/sub_viewport.gd" id="1_ft4me"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_4c1nv"]
+viewport_path = NodePath("SubViewport")
+
 [node name="CustomLabelObj" type="Sprite3D" unique_id=462409172]
+texture = SubResource("ViewportTexture_4c1nv")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1658184626]
+transparent_bg = true
 script = ExtResource("1_ft4me")
 
 [node name="Label" type="Label" parent="SubViewport" unique_id=1656979341]

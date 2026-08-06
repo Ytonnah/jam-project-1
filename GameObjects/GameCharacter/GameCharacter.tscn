@@ -1,21 +1,27 @@
 [gd_scene format=3 uid="uid://b61258u6rdcx0"]
 
 [ext_resource type="Script" uid="uid://bjxapmjxh7sqq" path="res://GameObjects/GameCharacter/movement.gd" id="1_q1bci"]
+[ext_resource type="Script" uid="uid://bgturhihq64h2" path="res://GameObjects/GameCharacter/UI/interaction_feedback.gd" id="2_7k063"]
+[ext_resource type="Script" uid="uid://dn7g0e6m1h058" path="res://GameObjects/GameCharacter/camera_3d.gd" id="2_gtlb8"]
+[ext_resource type="PackedScene" uid="uid://denb5b5jce3p6" path="res://GameObjects/Items/flashlight.tscn" id="4_wo2fg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gj0gs"]
-radius = 0.6098633
-height = 2.1152344
+radius = 1.1318359
+height = 3.1264648
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q1bci"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_q1bci"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c1nv"]
+size = Vector3(1, 1, 2.4052734)
+
 [node name="GameCharacter" type="CharacterBody3D" unique_id=1987827767 groups=["Player"]]
 script = ExtResource("1_q1bci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855276095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007597029, 0.057617188, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007597029, 0.5190549, 0)
 shape = SubResource("CapsuleShape3D_gj0gs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=960365236]
@@ -29,7 +35,8 @@ texture = SubResource("ViewportTexture_q1bci")
 disable_3d = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=559369210]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6034922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1806276, -0.6034922)
+script = ExtResource("2_gtlb8")
 
 [node name="DEBUG" type="Control" parent="Camera3D" unique_id=119457314]
 layout_mode = 3
@@ -63,6 +70,7 @@ offset_bottom = 574.0
 text = "You Interacted with something "
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_7k063")
 
 [node name="MainUI" type="Control" parent="Camera3D" unique_id=890651876]
 layout_mode = 3
@@ -70,3 +78,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1153584433]
+transform = Transform3D(1, 0, 0, 0, 0.22486605, -0.9743898, 0, 0.9743898, 0.22486605, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D" unique_id=32244095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059797764, 0, -0.7026368)
+shape = SubResource("BoxShape3D_4c1nv")
+
+[node name="Flashlight" parent="." unique_id=755652240 instance=ExtResource("4_wo2fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067581296, 0, -0.49702454)

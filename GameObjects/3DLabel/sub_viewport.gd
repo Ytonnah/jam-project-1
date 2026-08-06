@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	size = $Label.size
 	pass
 func _enter_tree() -> void:
-	#size = $Label.size
+	size = $Label.size
 	pass

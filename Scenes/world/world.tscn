@@ -17,6 +17,12 @@ viewport_path = NodePath("Interactable Object/text above/SubViewport")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tcf2h"]
 
+[sub_resource type="Environment" id="Environment_4c1nv"]
+background_mode = 2
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.0
+
 [node name="World" type="Node3D" unique_id=1405514526]
 
 [node name="UI_Viewport" type="SubViewport" parent="." unique_id=1226830333]
@@ -53,6 +59,8 @@ text = "Interactability Label"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=62621440]
 transform = Transform3D(0.9965676, -0.06552364, 0.050592422, -0.0075751, 0.5364049, 0.8439268, -0.08243517, -0.8414134, 0.53406745, -9.804928, 7.9462395, 5.1554856)
+visible = false
+sky_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=123251191]
@@ -88,4 +96,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.080551, 2.3138194, -16.496
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.077883, 1.2867699, -21.89316)
 
 [node name="tree2" parent="." unique_id=599960925 instance=ExtResource("5_nhnx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4974556, 10.208464, -26.697556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4974556, 8.019412, -26.697556)
+
+[node name="PickupableObject3D2" parent="." unique_id=1400736947 instance=ExtResource("3_g0k8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8761563, 0.7867701, -2.5489275)
+
+[node name="PickupableObject3D3" parent="." unique_id=1753149975 instance=ExtResource("3_g0k8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661221, 3.0076945, -4.6493163)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1430856958]
+environment = SubResource("Environment_4c1nv")
