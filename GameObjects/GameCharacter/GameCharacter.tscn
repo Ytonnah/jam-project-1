@@ -38,6 +38,9 @@ disable_3d = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1806276, -0.6034922)
 script = ExtResource("2_gtlb8")
 
+[node name="Flashlight" parent="Camera3D" unique_id=755652240 instance=ExtResource("4_wo2fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067581296, 0.8233068, 0.106467664)
+
 [node name="DEBUG" type="Control" parent="Camera3D" unique_id=119457314]
 layout_mode = 3
 anchors_preset = 0
@@ -85,6 +88,3 @@ transform = Transform3D(1, 0, 0, 0, 0.22486605, -0.9743898, 0, 0.9743898, 0.2248
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D" unique_id=32244095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059797764, 0, -0.7026368)
 shape = SubResource("BoxShape3D_4c1nv")
-
-[node name="Flashlight" parent="." unique_id=755652240 instance=ExtResource("4_wo2fg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067581296, 0, -0.49702454)

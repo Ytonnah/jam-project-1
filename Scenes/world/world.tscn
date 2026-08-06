@@ -75,7 +75,7 @@ transform = Transform3D(51.491768, 0, -1.1920929e-07, 0, 0.1844579, 0, 2.0861626
 mesh = SubResource("PlaneMesh_tcf2h")
 
 [node name="GameCharacter" parent="." unique_id=1987827767 instance=ExtResource("2_myojr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9226618, 2.5352333, 2.6792421)
+transform = Transform3D(0.9631198, 0, -0.26907292, 0, 1, 0, 0.26907292, 0, 0.9631198, 11.5864725, 2.5352333, 2.6792421)
 
 [node name="PickupableObject3D" parent="." unique_id=225234001 instance=ExtResource("3_g0k8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1707754, 1.3808419, -9.400598)
