@@ -7,10 +7,13 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_jwkd2"]
 radius = 1.0050294
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_yd65q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_460gw"]
 
 [node name="PickupableObject3D" type="RigidBody3D" unique_id=225234001 groups=["Interactable"]]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_460gw")
+metadata/Carry = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=691005296]
 mesh = SubResource("SphereMesh_yd65q")
@@ -21,7 +24,9 @@ mesh = SubResource("SphereMesh_yd65q")
 shape = SubResource("SphereShape3D_jwkd2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1862581483]
-shape = SubResource("SphereShape3D_yd65q")
+shape = SubResource("BoxShape3D_460gw")
 
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]
+[connection signal="area_exited" from="PickupArea" to="." method="_on_pickup_area_area_exited"]
 [connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="." method="_on_pickup_area_body_exited"]

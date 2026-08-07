@@ -12,6 +12,10 @@ extends CharacterBody3D
 @export var min_pitch_deg: float = -89.0
 @export var max_pitch_deg: float = 89.0
 
+var is_carrying = false
+
+
+
 # Node References
 @onready var camera_3d: Camera3D = $Camera3D
 

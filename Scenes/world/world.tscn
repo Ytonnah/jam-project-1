@@ -23,6 +23,39 @@ viewport_path = NodePath("Interactable Object/text above/SubViewport")
 
 [node name="World" type="Node3D" unique_id=1405514526]
 
+[node name="Objects" type="Node3D" parent="." unique_id=1800349714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661221, 3.0076945, -4.6493163)
+
+[node name="tall_grass2" parent="Objects" unique_id=1432784710 instance=ExtResource("4_12diy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.032269, 0.2790792, -6.1412187)
+
+[node name="ship_bin2" parent="Objects" unique_id=1132514401 instance=ExtResource("4_qgrml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.124451, 1.7169168, -11.072746)
+metadata/Type = "Deletion"
+
+[node name="TriggerModule" parent="Objects/ship_bin2" unique_id=680979519 instance=ExtResource("7_tspqu")]
+
+[node name="grass2" parent="Objects" unique_id=1706029183 instance=ExtResource("6_5jrsn")]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 17.071758, -1.5209244, -18.349169)
+
+[node name="gas_stand2" parent="Objects" unique_id=322410124 instance=ExtResource("7_pbr1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.41933, -0.6938751, -11.847609)
+metadata/Type = "Activate"
+
+[node name="TriggerModule" parent="Objects/gas_stand2" unique_id=694520445 instance=ExtResource("7_tspqu")]
+
+[node name="crate2" parent="Objects" unique_id=1910325104 instance=ExtResource("8_tspqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.416662, -1.7209246, -17.243843)
+
+[node name="tree2" parent="Objects" unique_id=599960925 instance=ExtResource("5_nhnx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1637654, 5.011718, -22.048239)
+metadata/Type = "Deletion"
+
+[node name="TriggerModule" parent="Objects/tree2" unique_id=317166422 instance=ExtResource("7_tspqu")]
+
+[node name="Konbini" parent="Objects" unique_id=1314538819 instance=ExtResource("13_77064")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.8928485, -2.7209246, 46.35109)
+
 [node name="UI_Viewport" type="SubViewport" parent="." unique_id=1226830333]
 
 [node name="Label" type="Label" parent="UI_Viewport" unique_id=175923076]
@@ -32,6 +65,7 @@ text = "X"
 
 [node name="Interactable Object" type="Node3D" parent="." unique_id=24964112]
 transform = Transform3D(0.9965676, -0.06552363, 0.05059242, -0.0075751, 0.5364049, 0.8439268, -0.08243517, -0.8414134, 0.53406745, 1.6385977, 2.3847904, -9.656378)
+visible = false
 
 [node name="Label3D" type="Label3D" parent="Interactable Object" unique_id=589466048]
 transform = Transform3D(1.0000006, 7.450581e-09, 3.3527613e-08, 2.2351742e-08, 1.0000001, -2.9802322e-08, -1.8626451e-08, -3.5762787e-07, 1, -13.246184, 10.973242, -7.1695366)
@@ -63,63 +97,38 @@ metadata/_edit_lock_ = true
 
 [node name="TriggerObject3d" parent="." unique_id=528592799 node_paths=PackedStringArray("linked_nodes") instance=ExtResource("2_pbr1s")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 15.74831, 1.14031, -0.82044697)
-linked_nodes = [NodePath("../ship_bin2"), NodePath("../gas_stand2"), NodePath("../tree2")]
+linked_nodes = [NodePath("../Objects/ship_bin2"), NodePath("../Objects/gas_stand2"), NodePath("../Objects/tree2")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=123251191]
+[node name="floor" type="StaticBody3D" parent="." unique_id=123251191]
 transform = Transform3D(0.99998057, 0, 0.006230785, 0, 1, 0, -0.006230785, 0, 0.99998057, 0.17833972, 0.2867701, -2.1683254)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=630594229]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=630594229]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_6xmxd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2085843945]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=2085843945]
 transform = Transform3D(51.49177, 0, -1.3411045e-07, 0, 0.1844579, 0, 2.3841858e-07, 0, 37.860195, -0.11327399, 0.31003523, 0.0074834824)
 mesh = SubResource("PlaneMesh_tcf2h")
 
 [node name="GameCharacter" parent="." unique_id=1987827767 instance=ExtResource("2_myojr")]
-transform = Transform3D(0.9631198, 0, -0.26907292, 0, 1, 0, 0.26907292, 0, 0.9631198, 11.5864725, 2.5352333, 2.6792421)
+transform = Transform3D(0.9631198, 0, -0.26907292, 0, 1, 0, 0.26907292, 0, 0.9631198, 11.5864725, 2.5352333, 26.183598)
 
 [node name="PickupableObject3D" parent="." unique_id=225234001 instance=ExtResource("3_g0k8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1707754, 1.3808419, -9.400598)
-
-[node name="tall_grass2" parent="." unique_id=1432784710 instance=ExtResource("4_12diy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.69349, 3.2867737, -10.790535)
-
-[node name="ship_bin2" parent="." unique_id=1132514401 instance=ExtResource("4_qgrml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.785671, 4.7246113, -15.722063)
-metadata/Type = "Deletion"
-
-[node name="TriggerModule" parent="ship_bin2" unique_id=680979519 instance=ExtResource("7_tspqu")]
-
-[node name="grass2" parent="." unique_id=1706029183 instance=ExtResource("6_5jrsn")]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 22.732979, 1.48677, -22.998486)
-
-[node name="gas_stand2" parent="." unique_id=322410124 instance=ExtResource("7_pbr1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.080551, 2.3138194, -16.496925)
-metadata/Type = "Activate"
-
-[node name="TriggerModule" parent="gas_stand2" unique_id=694520445 instance=ExtResource("7_tspqu")]
-
-[node name="crate2" parent="." unique_id=1910325104 instance=ExtResource("8_tspqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.077883, 1.2867699, -21.89316)
-
-[node name="tree2" parent="." unique_id=599960925 instance=ExtResource("5_nhnx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4974556, 8.019412, -26.697556)
-metadata/Type = "Deletion"
-
-[node name="TriggerModule" parent="tree2" unique_id=317166422 instance=ExtResource("7_tspqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1707754, 1.3808419, 24.869732)
+carry = true
 
 [node name="PickupableObject3D2" parent="." unique_id=1400736947 instance=ExtResource("3_g0k8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8761563, 0.7867701, -2.5489275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8761563, 0.7867701, 18.651352)
+carry = true
 
 [node name="PickupableObject3D3" parent="." unique_id=1753149975 instance=ExtResource("3_g0k8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661221, 3.0076945, -4.6493163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661221, 3.0076945, 21.396309)
+carry = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1430856958]
 process_mode = 4
 
 [node name="GameCharacter2" parent="." unique_id=249094455 instance=ExtResource("12_tspqu")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.699554, 2.9861655, -2.0741222)
-
-[node name="Node3D" parent="." unique_id=1314538819 instance=ExtResource("13_77064")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.5540695, 0.28676987, 41.701775)
+visible = false
