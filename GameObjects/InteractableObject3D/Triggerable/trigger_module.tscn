@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cfwjtiq4lp0ad"]
+
+[ext_resource type="Script" uid="uid://dunv4ro380huy" path="res://GameObjects/InteractableObject3D/Triggerable/trigger_module.gd" id="1_0slij"]
+
+[node name="TriggerModule" type="Node3D" unique_id=680979519]
+script = ExtResource("1_0slij")
