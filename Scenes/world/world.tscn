@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfwjtiq4lp0ad" path="res://GameObjects/InteractableObject3D/Triggerable/trigger_module.tscn" id="7_tspqu"]
 [ext_resource type="PackedScene" uid="uid://dsli8pquusg3p" path="res://Assets/crate.tscn" id="8_tspqu"]
 [ext_resource type="PackedScene" uid="uid://cdviwqks0qs5s" path="res://GameObjects/GameCharacter/NPC/NPC_Chaser.tscn" id="12_tspqu"]
+[ext_resource type="PackedScene" uid="uid://do5y7nmss0n7r" path="res://Assets/konbini.tscn" id="13_77064"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tcf2h"]
 viewport_path = NodePath("Interactable Object/text above/SubViewport")
@@ -119,3 +120,6 @@ process_mode = 4
 
 [node name="GameCharacter2" parent="." unique_id=249094455 instance=ExtResource("12_tspqu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.699554, 2.9861655, -2.0741222)
+
+[node name="Node3D" parent="." unique_id=1314538819 instance=ExtResource("13_77064")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.5540695, 0.28676987, 41.701775)
