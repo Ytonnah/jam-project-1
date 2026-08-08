@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhekyfng51fex"]
+
+[ext_resource type="Script" uid="uid://bib13o4mypvt1" path="res://GameObjects/InteractableObject3D/Interactable/interactable_area_3d.gd" id="1_12rvt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4c1nv"]
+radius = 2.3528256
+
+[node name="InteractableArea3d" type="Area3D" unique_id=218570650 node_paths=PackedStringArray("linked_object")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_12rvt")
+linked_object = [null]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1760543026]
+shape = SubResource("SphereShape3D_4c1nv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

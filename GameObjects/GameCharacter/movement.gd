@@ -49,7 +49,11 @@ func _unhandled_input(event: InputEvent) -> void:
 #DEBUG
 func interact_feedback1(text = "bug"):
 	$Camera3D/DEBUG/InteractionFeedback.animate_fade_in(text)
-
+func interact_feedback2(text='bug'):
+	$Camera3D/DEBUG/InteractionFeedback.animate_fade_in_only(text)
+func interact_feedback3()->void:
+	$Camera3D/DEBUG/InteractionFeedback.animate_fade_out()
+	
 func _physics_process(delta: float) -> void:
 	# Add gravity
 	if not is_on_floor():

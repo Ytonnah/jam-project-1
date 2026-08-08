@@ -11,6 +11,25 @@ var active_tween: Tween
 func _ready() -> void:
 	modulate.a = 0.0
 
+
+func animate_fade_in_only(new_text: String = "") -> void:
+	if new_text != "":
+		text = new_text
+
+	# Kill the previous tween if it's currently running or delayed
+	if active_tween and active_tween.is_valid():
+		active_tween.kill()
+
+	# Create a new active tween sequence
+	active_tween = get_tree().create_tween()
+
+	# 1. Fade in
+	active_tween.tween_property(self, "modulate:a", 1.0, fade_duration)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
+	
+	
+	
 ## Fades text in, holds for display_delay seconds, then fades out.
 ## If called again while running/waiting, it safely cancels and restarts.
 func animate_fade_in(new_text: String = "") -> void:

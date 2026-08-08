@@ -9,7 +9,7 @@ extends Area3D
 
 @export var enabled = true
 @export var linked_nodes: Array[Node3D]
-var interactable = true
+var interactable = false
 
 
 # MAIN
@@ -46,12 +46,13 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group('Player'):
 		interactable = true
 		emit_signal('player_colided')
-		#print_debug("interact trigger")
+		print_debug("interact trigger")
 		#toggle()
 		
 		pass
 
 
 func _on_body_exited(body: Node3D) -> void:
-	interactable = false
+	if body.is_in_group('Player'):
+		interactable = false
 	pass # Replace with function body.

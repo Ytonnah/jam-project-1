@@ -5,6 +5,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_xr3q8"]
 
 [node name="TriggerObject3d" type="Area3D" unique_id=528592799 groups=["Trigger"]]
+collision_layer = 4
+collision_mask = 11
 script = ExtResource("1_rfpwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1575508173]

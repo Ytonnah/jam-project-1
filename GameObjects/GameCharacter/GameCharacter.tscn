@@ -20,7 +20,7 @@ size = Vector3(1.9947052, 1.71875, 7.5214844)
 
 [node name="GameCharacter" type="CharacterBody3D" unique_id=1987827767 groups=["Player"]]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_q1bci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855276095]
@@ -91,8 +91,8 @@ transform = Transform3D(1, 0, 0, 0, 0.22486605, -0.9743898, 0, 0.9743898, 0.2248
 
 [node name="Camera Area" type="Area3D" parent="Camera3D" unique_id=1360349131 groups=["Player_Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.0059797764, 2.3841858e-07, -0.7026368)
-collision_layer = 5
-collision_mask = 7
+collision_layer = 2
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Camera Area" unique_id=32244095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3091507, -0.3593738, -3.2607422)

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dagiumsh48wmf" path="res://Assets/gas_stand.tscn" id="7_pbr1s"]
 [ext_resource type="PackedScene" uid="uid://cfwjtiq4lp0ad" path="res://GameObjects/InteractableObject3D/Triggerable/trigger_module.tscn" id="7_tspqu"]
 [ext_resource type="PackedScene" uid="uid://dsli8pquusg3p" path="res://Assets/crate.tscn" id="8_tspqu"]
+[ext_resource type="PackedScene" uid="uid://dhekyfng51fex" path="res://GameObjects/InteractableObject3D/Interactable/InteractableArea3D.tscn" id="11_8nkgs"]
 [ext_resource type="PackedScene" uid="uid://cdviwqks0qs5s" path="res://GameObjects/GameCharacter/NPC/NPC_Chaser.tscn" id="12_tspqu"]
 [ext_resource type="PackedScene" uid="uid://do5y7nmss0n7r" path="res://Assets/konbini.tscn" id="13_77064"]
 
@@ -110,6 +111,9 @@ shape = SubResource("WorldBoundaryShape3D_6xmxd")
 transform = Transform3D(51.49177, 0, -1.3411045e-07, 0, 0.1844579, 0, 2.3841858e-07, 0, 37.860195, -0.11327399, 0.31003523, 0.0074834824)
 mesh = SubResource("PlaneMesh_tcf2h")
 
+[node name="InteractableArea3d" parent="floor" unique_id=218570650 instance=ExtResource("11_8nkgs")]
+transform = Transform3D(0.9999807, 0, -0.006230786, 0, 1, 0, 0.006230786, 0, 0.9999807, -24.295313, 2.7183073, 33.26895)
+
 [node name="GameCharacter" parent="." unique_id=1987827767 instance=ExtResource("2_myojr")]
 transform = Transform3D(0.9631198, 0, -0.26907292, 0, 1, 0, 0.26907292, 0, 0.9631198, 11.5864725, 2.5352333, 26.183598)
 
@@ -131,4 +135,3 @@ process_mode = 4
 [node name="GameCharacter2" parent="." unique_id=249094455 instance=ExtResource("12_tspqu")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.699554, 2.9861655, -2.0741222)
-visible = false

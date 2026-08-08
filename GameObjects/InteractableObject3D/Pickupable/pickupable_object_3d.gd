@@ -72,16 +72,18 @@ func _input(event: InputEvent) -> void:
 		if player == null:
 			return
 			
-		if is_carried:
+		if is_carried and player.is_carrying:
 			# DROP: Currently carrying THIS object -> Drop it
-			stop_carry()
 			player.is_carrying = false
+			stop_carry()
+			
 			wait_with_tween(3)
 			
 		elif not player.is_carrying:
 			# PICKUP: Not carrying anything -> Pick up THIS object
-			start_carry()
 			player.is_carrying = true
+			start_carry()
+			
 			
 		#if is_carried and player.is_carrying:
 			#is_carried = false
