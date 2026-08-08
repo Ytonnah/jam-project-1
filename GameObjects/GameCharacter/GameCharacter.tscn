@@ -7,16 +7,16 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gj0gs"]
 radius = 2.2739258
-height = 6.6141357
+height = 6.459198
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q1bci"]
-height = 5.222412
+height = 6.6351013
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_q1bci"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ada2o"]
-size = Vector3(1.9947052, 1.71875, 7.5214844)
+size = Vector3(1.9947052, 1.71875, 4.276123)
 
 [node name="GameCharacter" type="CharacterBody3D" unique_id=1987827767 groups=["Player"]]
 collision_layer = 8
@@ -24,11 +24,10 @@ collision_mask = 11
 script = ExtResource("1_q1bci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855276095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007597029, 2.2628903, 0)
 shape = SubResource("CapsuleShape3D_gj0gs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=960365236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.611206, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22447205, 0)
 mesh = SubResource("CapsuleMesh_q1bci")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1350287832]
@@ -38,20 +37,22 @@ texture = SubResource("ViewportTexture_q1bci")
 [node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=620174417]
 disable_3d = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=559369210 groups=["Player_Camera"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7704196, -0.6034922)
+[node name="Neck" type="Node3D" parent="." unique_id=850791296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2448204, -0.6034922)
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=559369210 groups=["Player_Camera"]]
 script = ExtResource("2_gtlb8")
 
-[node name="Flashlight" parent="Camera3D" unique_id=755652240 instance=ExtResource("4_wo2fg")]
+[node name="Flashlight" parent="Neck/Camera3D" unique_id=755652240 instance=ExtResource("4_wo2fg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067581296, 0.8233068, 0.106467664)
 
-[node name="DEBUG" type="Control" parent="Camera3D" unique_id=119457314]
+[node name="DEBUG" type="Control" parent="Neck/Camera3D" unique_id=119457314]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Camera3D/DEBUG" unique_id=190746818]
+[node name="Label" type="Label" parent="Neck/Camera3D/DEBUG" unique_id=190746818]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 37.0
@@ -59,7 +60,7 @@ offset_right = 131.0
 offset_bottom = 60.0
 text = "Status: Healty"
 
-[node name="Action" type="Label" parent="Camera3D/DEBUG" unique_id=2016142666]
+[node name="Action" type="Label" parent="Neck/Camera3D/DEBUG" unique_id=2016142666]
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 49.0
@@ -68,7 +69,7 @@ text = "Action
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractionFeedback" type="RichTextLabel" parent="Camera3D/DEBUG" unique_id=873776119]
+[node name="InteractionFeedback" type="RichTextLabel" parent="Neck/Camera3D/DEBUG" unique_id=873776119]
 layout_mode = 0
 offset_left = 414.0
 offset_top = 516.0
@@ -79,21 +80,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_7k063")
 
-[node name="MainUI" type="Control" parent="Camera3D" unique_id=890651876]
+[node name="MainUI" type="Control" parent="Neck/Camera3D" unique_id=890651876]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1153584433]
+[node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D" unique_id=1153584433]
 transform = Transform3D(1, 0, 0, 0, 0.22486605, -0.9743898, 0, 0.9743898, 0.22486605, 0, 0, 0)
 
-[node name="Camera Area" type="Area3D" parent="Camera3D" unique_id=1360349131 groups=["Player_Camera"]]
+[node name="Camera Area" type="Area3D" parent="Neck/Camera3D" unique_id=1360349131 groups=["Player_Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.0059797764, 2.3841858e-07, -0.7026368)
 collision_layer = 2
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Camera Area" unique_id=32244095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3091507, -0.3593738, -3.2607422)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Neck/Camera3D/Camera Area" unique_id=32244095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3091507, -0.3593738, -1.6380612)
 shape = SubResource("BoxShape3D_ada2o")
